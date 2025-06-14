@@ -56,11 +56,11 @@ struct ContentView: View {
             showSheet = true
         }
         .sheet(isPresented: $showSheet) {
-            Text("Content")
-                .presentationDetents([.height(200), .medium, .large])
-                .presentationDragIndicator(.automatic)
+            Text("Upgrade to Pro")
+            .presentationDetents([.height(300), .medium, .large])
+            .presentationDragIndicator(.automatic)
         }
-        .font(.title).bold()
+        .font(.subheadline).bold()
         }
         
     }
