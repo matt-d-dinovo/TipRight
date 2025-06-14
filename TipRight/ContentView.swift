@@ -9,29 +9,40 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State private var tipAmount: Double = 0
-    @State private var splitAmount: Double = 1
+    @State private var tipAmount: Double = 0.0
+    @State private var splitAmount: Double = 1.0
     @State private var showSheet: Bool = false
     
     var body: some View {
+       
+        
+        
+        
+        
+        
+        
         
         VStack {
-            Slider(value: $tipAmount, in: 0...30 , step: 1) {
-                Text(String(tipAmount) + "%").font(.title2).fontWeight(.thin)
+
+            Slider(value: $tipAmount, in: 0...30, step: 1){
+                Text("Tip Amount: \(Int(tipAmount))")
             } minimumValueLabel: {
-                Text("Tip: ").font(.title2).fontWeight(.thin)
+                Text("Tip")
             } maximumValueLabel: {
-                Text(String(tipAmount) + "%").font(.title2).fontWeight(.thin)
+                Text(" \(Int(tipAmount)) %")
             }
             .padding()
-            
-            Slider(value: $splitAmount, in: 1...30, step: 1)
-            
-            
-            
-            
+                   
+            Slider(value: $splitAmount, in: 0...30, step: 1){
+                Text("Split Amount: \(Int(splitAmount))")
+            } minimumValueLabel: {
+                Text("Split")
+            } maximumValueLabel: {
+                Text(" \(Int(splitAmount))")
+            }
+            .padding()
         }
-        .padding()
+        
         
     VStack() {
             Text("Round up or down to the Nearest Dollar")
